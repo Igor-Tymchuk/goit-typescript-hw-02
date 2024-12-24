@@ -72,20 +72,6 @@ img {
   transform: translateY(0);
 }
 .ReactModal__Content--before-close {
+  pointer-events: none;
   transform: translateY(50px);
 }
-/* .footer {
-  position: absolute;
-  bottom: 20px;
-  right: 50%;
-  transform: translateX(50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  & p span {
-    font-weight: 700;
-  }
-  & p:last-child {
-    font-size: 12px;
-  }
-} */

@@ -1,14 +1,26 @@
 import toast, { Toaster } from "react-hot-toast";
 import s from "./SearchBar.module.css";
 import { MdSearch } from "react-icons/md";
+import { FormEvent } from "react";
 
-const SearchBar = ({ handleQuery }) => {
-  const createQuery = (e) => {
+interface SearchBarProps {
+  handleQuery: (query: string, perPage: number | null) => void;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ handleQuery }) => {
+  const createQuery = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const newQuery = e.target.elements.query.value.trim().toLowerCase();
+    const form = e.target as HTMLFormElement;
+    const newQuery: string = (
+      form.elements.namedItem("query") as HTMLInputElement
+    ).value
+      .trim()
+      .toLowerCase();
     if (newQuery === "") return toast.error("Search cannot be empty");
-    const perPage = e.target.elements.per_page.value;
-    e.target.reset();
+    const perPage: number = Number(
+      (form.elements.namedItem("per_page") as HTMLInputElement).value
+    );
+    form.reset();
     return handleQuery(newQuery, perPage);
   };
 
