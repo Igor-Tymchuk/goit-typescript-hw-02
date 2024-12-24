@@ -1,9 +1,5 @@
 import s from "./ErrorMessage.module.css";
-
-interface ErrorMessageProps {
-  code: string | undefined;
-  message: string | undefined;
-}
+import { ErrorMessageProps } from "./ErrorMessage.types";
 
 const ErrorMessage: React.FC<ErrorMessageProps> = ({ code, message }) => {
   return (

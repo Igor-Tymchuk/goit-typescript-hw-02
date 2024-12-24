@@ -1,8 +1,5 @@
 import s from "./LoadMoreBtn.module.css";
-
-interface LoadMoreBtnProps {
-  handleLoadMore: () => void;
-}
+import { LoadMoreBtnProps } from "./LoadMoreBtn.types";
 
 const LoadMoreBtn: React.FC<LoadMoreBtnProps> = ({ handleLoadMore }) => {
   return (

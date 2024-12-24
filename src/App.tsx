@@ -58,8 +58,8 @@ const App = () => {
       } catch (err: unknown) {
         if (axios.isAxiosError(err))
           setError({
-            errCode: String(err.status),
-            errMsg: err.response?.data?.errors?.join(", "),
+            errCode: err.status?.toString() || "Unknown",
+            errMsg: err?.response?.data?.errors?.join(", ") || "Unknown error",
           });
         else
           setError({

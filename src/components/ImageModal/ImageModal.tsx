@@ -1,15 +1,13 @@
 import s from "./ImageModal.module.css";
 import Modal from "react-modal";
 import { FaRegHeart, FaWindowClose } from "react-icons/fa";
-import { Image } from "../../App.types";
+import { ImageModalProps } from "./ImageModal.types";
 
-interface ImageModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  selectedImage: Image | null;
-}
-
-const ImageModal = ({ isOpen, onClose, selectedImage }: ImageModalProps) => {
+const ImageModal: React.FC<ImageModalProps> = ({
+  isOpen,
+  onClose,
+  selectedImage,
+}) => {
   if (!selectedImage) {
     return null;
   }

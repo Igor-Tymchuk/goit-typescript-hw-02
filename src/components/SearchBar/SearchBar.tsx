@@ -2,10 +2,7 @@ import toast, { Toaster } from "react-hot-toast";
 import s from "./SearchBar.module.css";
 import { MdSearch } from "react-icons/md";
 import { FormEvent } from "react";
-
-interface SearchBarProps {
-  handleQuery: (query: string, perPage: number | null) => void;
-}
+import { SearchBarProps } from "./SearchBar.types";
 
 const SearchBar: React.FC<SearchBarProps> = ({ handleQuery }) => {
   const createQuery = (e: FormEvent<HTMLFormElement>) => {

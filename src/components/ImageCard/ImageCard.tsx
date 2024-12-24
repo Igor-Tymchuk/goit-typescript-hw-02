@@ -1,10 +1,5 @@
-import { Image } from "../../App.types";
 import s from "./ImageCard.module.css";
-
-interface ImageCardProps {
-  image: Image;
-  handleModal: (ImageData: Image) => void;
-}
+import { ImageCardProps } from "./ImageCard.types";
 
 const ImageCard: React.FC<ImageCardProps> = ({ image, handleModal }) => {
   return (

@@ -1,11 +1,6 @@
 import s from "./ImageGallery.module.css";
 import ImageCard from "../ImageCard/ImageCard";
-import { Image } from "../../App.types";
-
-interface ImageGalleryProps {
-  data: Image[];
-  handleModal: (ImageData: Image) => void;
-}
+import { ImageGalleryProps } from "./ImageGallery.types";
 
 const ImageGallery: React.FC<ImageGalleryProps> = ({ data, handleModal }) => {
   return (
