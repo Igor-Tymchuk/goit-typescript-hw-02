@@ -52,7 +52,7 @@ const App = () => {
       try {
         setLoader(true);
         setError(null);
-        const data: Data = await fetchImg(query, perPage, page);
+        const data = await fetchImg<Data>(query, perPage, page);
         setResults((prev) => [...prev, ...data.results]);
         setTotalPages(data.total_pages);
       } catch (err: unknown) {
